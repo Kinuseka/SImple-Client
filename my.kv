@@ -1,0 +1,56 @@
+
+
+
+<Pages>:
+    Scroll:
+        
+        smooth_scroll_y: 1
+        id: scroll
+        hill: jack
+        Box:
+            id: jack
+            cols: self.pages    
+            height: self.minimum_height
+            size_hint: 1, None
+            rows: 1
+            
+<home>:
+    id: child
+    code: coal	
+    status: gold
+    status2: diamond
+    sutton: silver
+    viewsutton: emerald
+    BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            rows: 2 
+            Label:
+                text_size: self.size
+                valign: 'middle'
+                id: gold
+                text: "Standby"
+            Label:
+                text_size: self.size
+                valign: 'middle'
+                id: diamond
+                text: "Selected: NONE"
+        GridLayout:
+            cols: 2
+            Label: 
+                text: "Input code/link:"
+                
+            TextInput:
+                id: coal
+                multiline: False
+        GridLayout:
+            cols: 2
+            Button:
+                id: silver
+                text: "Search"
+                on_release: root.Result()
+            Button:
+                id: emerald
+                disabled: True
+                text: "View"
+                on_release: root.Switch()
